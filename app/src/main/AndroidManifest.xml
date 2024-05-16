@@ -26,18 +26,15 @@
         <activity
             android:name=".ActivityB"
             android:label="ActivityB"
-            android:exported="false"
-            android:launchMode="singleTask"/>
+            android:exported="false"/>
         <activity
             android:name=".ActivityC"
             android:label="ActivityC"
-            android:exported="false"
-            android:launchMode="standard"/>
+            android:exported="false"/>
         <activity
             android:name=".ActivityD"
             android:label="ActivityD"
-            android:exported="false"
-            android:launchMode="singleTask"/>
+            android:exported="false"/>
     </application>
 
 </manifest>

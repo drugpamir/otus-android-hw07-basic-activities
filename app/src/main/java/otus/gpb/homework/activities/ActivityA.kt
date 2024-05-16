@@ -20,11 +20,10 @@ class ActivityA : AppCompatActivity() {
         buttonToB?.setOnClickListener {
             intent = Intent(this, ActivityB::class.java).apply {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
             }
             startActivity(intent)
-//            startActivity(Intent(this, ActivityB::class.java))
         }
-//        Log.i(TAG, "${javaClass.simpleName}: ${object {}.javaClass.enclosingMethod?.name}")
         Log.i(TAG, "${javaClass.simpleName}: onCreate")
     }
 

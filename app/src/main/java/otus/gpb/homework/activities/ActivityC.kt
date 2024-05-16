@@ -24,7 +24,11 @@ class ActivityC : AppCompatActivity() {
 
         buttonOpenD = findViewById(R.id.button_open_d)
         buttonOpenD?.setOnClickListener {
-            startActivity(Intent(this, ActivityD::class.java))
+            intent = Intent(this, ActivityD::class.java).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            }
+            startActivity(intent)
         }
 
         buttonCloseC = findViewById(R.id.button_close_c)
@@ -34,10 +38,7 @@ class ActivityC : AppCompatActivity() {
 
         buttonCloseStack = findViewById(R.id.button_close_stack)
         buttonCloseStack?.setOnClickListener {
-            intent = Intent(this, ActivityA::class.java).apply {
-                addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-            }
-            startActivity(intent)
+            finishAffinity()
         }
 
         Log.i(TAG, "${javaClass.simpleName}: onCreate")
